@@ -37,6 +37,7 @@ const userController = {
       const token = jwt.sign({ _id: user._id.toString() }, config.jwtSecret);
       res.status(201).json({ user: user, token: token });
     } catch (error) {
+      console.log(error)
       res.status(400).send(error);
     }
   },
